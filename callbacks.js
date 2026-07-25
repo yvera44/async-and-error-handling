@@ -7,8 +7,12 @@ fs.readFile('./data.json', 'utf8', (err, data) => {
         console.error('Error reading file:');
         throw err;
     }
+   try{
     const dataObj = JSON.parse(data);
     console.log(dataObj);
-    console.log("Completed");
-    
+    console.log("Complete");
+   } catch (err) {
+    console.error('Error parsing JSON:');
+    throw err;
+   }
 });
